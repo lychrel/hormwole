@@ -1,0 +1,20 @@
+<script>
+var deltaT = 4; //time traveled in years
+var L_earth = 10; //years that have passed on earth
+var L_travel = 6; //years that have passed for traveler
+var dist = 4; //distance traveled in light years
+var c = 3*10^8; //speed of light
+var speed = 0.8*c; //80% speed of light
+
+// we'll eventually take advantage of JS's dynamic typing. Casing on user input,
+// var L_travel = function(){} or
+// var L_travel = *some constant*
+
+var speed = function speed(_dist, L_travel) {return ((dist)^2/((L_travel/2)^2+(dist)^2))^(1/2)};
+
+var distance = function (L_travel, speed) { return (L_travel/2)/((1/(speed^2)-1)^(1/2))};
+
+var L_travel = function(dist, speed) { return 2*dist*((1/(speed^2)-1)^(1/2))};
+
+alert(L_travel(1,1));
+</script>
